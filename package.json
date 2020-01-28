@@ -14,10 +14,12 @@
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
+    "aws-sdk": "^2.610.0",
     "axios": "^0.19.2",
     "babel-jest": "^25.1.0",
     "express": "^4.17.1",
     "mongoose": "^5.8.9",
+    "node-uuid": "^1.4.8",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -28,7 +30,13 @@
     "babel-loader": "^8.0.6",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^25.1.0",
     "nodemon": "^2.0.2",
     "webpack": "^4.41.5",

@@ -24,3 +24,6 @@ coverage
 build/
 dist/
 
+# Nothing to look here...move along...
+server/config.js
+server/config.json
