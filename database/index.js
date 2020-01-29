@@ -4,8 +4,10 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/media', { useNewUrlParser: true });
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
+
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function () {
+// });
 
   let mediaSchema = new mongoose.Schema({
     photos: [String],
@@ -50,9 +52,24 @@ db.once('open', function () {
 
   MediaListings.insertMany(listingData, function (error, docs) {
     if (error) {
-      console.log('did not upload');
+      console.log('did NOT upload');
     } else {
-      console.log(docs);
+      console.log(listingData.length, 'listing data sent to mongoose!');
     }
   });
-});
+
+  let getAllMedia = (callback) => {
+
+    MediaListings.find({}, (error, results) => {
+      if (error) {
+        console.log('you got an error! ' + error);
+      } else {
+        console.log('db current record count is :', results.length)
+        callback(null, results);
+      }
+    });
+  };
+
+module.exports = {getAllMedia};
+
+
