@@ -3,7 +3,7 @@
       module: {
         rules: [
           {
-            test: [/\.jsx$/], // might need (js|jsx)$ later?
+            test: [/\.(js|jsx)$/],
             exclude: /node_modules/,
             use: {
               loader: 'babel-loader',
